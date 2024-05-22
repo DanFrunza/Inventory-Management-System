@@ -1,0 +1,57 @@
+﻿@page "/produse"
+@using DataAccessLayer.Models
+@using BusinessLayer.Services
+@inject ProdusService produsService
+
+<h3>Lista de Produse</h3>
+
+@if (produse == null)
+{
+    <p>Loading...</p>
+}
+else if (produse.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nume</th>
+                <th>Descriere</th>
+                <th>Cantitate</th>
+                <th>Data Expirare</th>
+                <th>Furnizor</th>
+                <th>Departament</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var produs in produse)
+            {
+                <tr>
+                    <td>@produs.Nume</td>
+                    <td>@produs.Descriere</td>
+                    <td>@produs.Cantitate</td>
+                    <td>@produs.DataExpirare</td>
+                    <td>@produs.Furnizor.Nume</td>
+                    <td>@produs.Departament.Nume</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nu există produse disponibile.</p>
+}
+
+@code {
+    private List<Produs> produse;
+
+    protected override void OnInitialized()
+    {
+        LoadProduse();
+    }
+
+    private void LoadProduse()
+    {
+        produse = produsService.GetAll().ToList();
+    }
+}

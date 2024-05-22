@@ -1,0 +1,51 @@
+﻿@page "/furnizori"
+@using DataAccessLayer.Models
+@using BusinessLayer.Services
+@inject FurnizorService furnizorService
+
+<h3>Lista Furnizorilor</h3>
+
+@if (furnizori == null)
+{
+    <p>Loading...</p>
+}
+else if (furnizori.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nume</th>
+                <th>Contact</th>
+                <th>Adresa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var furnizor in furnizori)
+            {
+                <tr>
+                    <td>@furnizor.Nume</td>
+                    <td>@furnizor.Contact</td>
+                    <td>@furnizor.Adresa</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nu există furnizori disponibili.</p>
+}
+
+@code {
+    private List<Furnizor> furnizori;
+
+    protected override void OnInitialized()
+    {
+        LoadFurnizori();
+    }
+
+    private void LoadFurnizori()
+    {
+        furnizori = furnizorService.GetAll().ToList();
+    }
+}

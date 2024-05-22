@@ -1,0 +1,47 @@
+﻿@page "/departamente"
+@using DataAccessLayer.Models
+@using BusinessLayer.Services
+@inject DepartamentService departamentService
+
+<h3>Lista Departamentelor</h3>
+
+@if (departamente == null)
+{
+    <p>Loading...</p>
+}
+else if (departamente.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nume</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var departament in departamente)
+            {
+                <tr>
+                    <td>@departament.Nume</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nu există departamente disponibile.</p>
+}
+
+@code {
+    private List<Departament> departamente;
+
+    protected override void OnInitialized()
+    {
+        LoadDepartamente();
+    }
+
+    private void LoadDepartamente()
+    {
+        departamente = departamentService.GetAll().ToList();
+    }
+}
