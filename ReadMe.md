@@ -1,18 +1,18 @@
 ﻿# README
 
-## Descriere
-Acest proiect este un sistem de gestionare a inventarului, numit "Inventory Management System". Scopul său este de a ajuta întreprinderile să-și gestioneze eficient stocurile de produse și materiale.
+## Description
+This project is an inventory management system, called "Inventory Management System". Its purpose is to help businesses manage their inventory of products and materials efficiently.
 
-## Obiectivele Proiectului
-- Dezvoltarea unei interfețe de utilizator intuitive și ușor de folosit pentru gestionarea inventarului.
-- Implementarea funcționalităților de adăugare, editare și ștergere a produselor și materialelor în stoc.
-- Asigurarea unei evidențe precise a stocurilor, inclusiv rapoarte și alerte pentru nivelurile scăzute de stoc.
-- Integrarea unui sistem de autentificare și autorizare pentru protejarea datelor sensibile ale companiei.
-- Optimizarea performanței și scalabilității sistemului pentru a gestiona eficient un volum mare de produse și tranzacții.
+## Project objectives
+- Development of an intuitive and easy-to-use user interface for inventory management.
+- Implementation of functionality to add, edit and delete products and materials in stock.
+- Ensuring accurate stock records, including reports and alerts for low stock levels.
+- Integrating an authentication and authorization system to protect sensitive company data.
+- Optimizing system performance and scalability to efficiently handle a large volume of products and transactions.
 
-## Cum să Rulezi Proiectul
-1. Clonează acest repository pe computerul tău.
-2. Deschide soluția în mediul tău de dezvoltare preferat (de exemplu, Visual Studio sau Visual Studio Code).
-3. Configurează conexiunea la baza de date, dacă este necesar, în fișierul de configurare.
-4. Rulează aplicația din mediul tău de dezvoltare sau folosind comenzile de rulare specifice, cum ar fi `dotnet run` pentru aplicațiile .NET Core.
-5. Accesează aplicația în browser sau folosind un client API, în funcție de configurarea proiectului.
+## How to Run the Project
+1. Clone this repository to your computer.
+2. Open the solution in your preferred development environment (for example, Visual Studio or Visual Studio Code).
+3. Configure the database connection, if necessary, in the configuration file.
+4. Run the application from your development environment or using specific run commands, such as dotnet run for .NET Core applications.
+5. Access the application in the browser or using an API client, depending on your project configuration.
